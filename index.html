@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to EvalBricks</title>
+    <link rel="preload" href="vipers.png" as="image">
+    <link rel="preload" href="hawks.jpeg" as="image">
+    <link rel="preload" href="avs.jpeg" as="image">
+    <link rel="preload" href="crush.png" as="image">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-[#F5F2EF] text-[#2D3436] min-h-screen flex flex-col" x-data="{ page: 'home' }">
+
+    <nav class="flex justify-between items-center py-4 px-10 bg-white border-b border-[#E0DED7]">
+  <div class="flex items-center">
+    <a href="#">
+      <img src="EBlogo.jpeg" alt="EvalBricks Logo" class="h-32 w-auto object-contain">
+    </a>
+  </div>
+  
+  <div class="space-x-8 font-medium text-[#2D3436]">
+    <a href="#" @click.prevent="page = 'home'" class="hover:text-[#4834D4] transition-all duration-300">HOME</a>
+    <a href="#" @click.prevent="page = 'platform'" class="hover:text-[#4834D4] transition-all duration-300">Platform</a>
+    <a href="#" @click.prevent="page = 'about'" class="hover:text-[#4834D4] transition-all duration-300">About</a>
+    <a href="https://apps-soccergrade.onrender.com" class="px-4 py-2 bg-[#4834D4] text-white rounded-full hover:bg-[#6C5CE7] transition-all">Create/Login</a>
+    <a href="#" @click.prevent="page = 'pricing'" class="hover:text-[#4834D4] transition-all duration-300">Pricing</a>
+  </div>
+</nav>
+</nav>
+
+<header class="relative w-full h-[50vh] overflow-hidden flex items-center justify-center">
+    <div class="absolute inset-0">
+        <img src="blurredbg.png" alt="Soccer pitch" class="w-full h-full object-cover blur-sm scale-105">
+        <div class="absolute inset-0 bg-black/40"></div>
+    </div>
+    <div class="relative z-10 text-center px-4">
+        <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight">
+    Welcome to <span class="text-[#003366]">Eval</span><span class="text-[#0099CC]">Bricks</span><br>
+    <span class="text-2xl md:text-4xl font-light text-white">modernizing tryout and roster building</span>
+</h1>
+    </div>
+</header>
+
+<main class="flex-grow p-10">
+    <main class="flex-grow p-10">
+        <div x-show="page === 'home'" class="max-w-5xl mx-auto space-y-8">
+            <section class="bg-white p-8 rounded-2xl border-t-8 border-[#003366] shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col h-[650px]">
+    
+    <div class="pb-4 mb-4 border-b border-[#E0DED7] shrink-0">
+        <h2 class="text-3xl font-extrabold mb-1 text-[#2D3436] tracking-tight">The Problem</h2>
+        <h3 class="text-sm font-semibold text-[#0099CC] uppercase tracking-wider leading-snug">
+            The Modern Youth Sports Tryout Is Operationally Broken
+        </h3>
+    </div>
+
+    <div class="overflow-y-auto pr-4 space-y-8 flex-grow" style="scrollbar-width: thin; scrollbar-color: #0099CC transparent;">
+        
+        <div class="relative pl-10">
+            <i data-lucide="activity" class="absolute left-0 top-0.5 w-6 h-6 text-[#003366]"></i>
+            <h4 class="font-bold text-[#2D3436] text-base mb-2">1. Impossible Multitasking</h4>
+            <p class="text-sm text-[#636E72] mb-3">During a drill or scrimmage, one evaluator must simultaneously:</p>
+            <ul class="list-none space-y-2 mb-4 text-sm text-[#636E72]">
+                <li class="flex items-start"><span class="text-[#0099CC] mr-2">•</span> Track each athlete’s jersey number</li>
+                <li class="flex items-start"><span class="text-[#0099CC] mr-2">•</span> Observe multiple players at once</li>
+                <li class="flex items-start"><span class="text-[#0099CC] mr-2">•</span> Record notes on paper</li>
+                <li class="flex items-start"><span class="text-[#0099CC] mr-2">•</span> Look down, look up, and not miss anything</li>
+                <li class="flex items-start"><span class="text-[#0099CC] mr-2">•</span> Remember context about positions, strengths, and weaknesses</li>
+            </ul>
+            <div class="bg-[#F5F2EF] p-3 rounded-lg border-l-4 border-[#0099CC]">
+                <p class="text-xs text-[#2D3436] font-medium leading-relaxed">This is cognitively unrealistic. Human attention is limited, and paper‑based workflows force evaluators to choose between watching the play or writing the note.</p>
+            </div>
+        </div>
+
+        <div class="relative pl-10">
+            <i data-lucide="file-warning" class="absolute left-0 top-0.5 w-6 h-6 text-[#003366]"></i>
+            <h4 class="font-bold text-[#2D3436] text-base mb-2">2. Fragmented, Unreliable Data</h4>
+            <p class="text-sm text-[#636E72] mb-3">Old-fashioned pen-and-paper systems introduce structural failures:</p>
+            <ul class="list-none space-y-2 mb-4 text-sm text-[#636E72]">
+                <li class="flex items-start"><span class="text-[#0099CC] mr-2">•</span> Notes are inconsistent across evaluators</li>
+                <li class="flex items-start"><span class="text-[#0099CC] mr-2">•</span> Handwriting varies, gets messy, or is incomplete</li>
+                <li class="flex items-start"><span class="text-[#0099CC] mr-2">•</span> Observations lack timestamps or drill context</li>
+                <li class="flex items-start"><span class="text-[#0099CC] mr-2">•</span> Data is scattered across multiple sheets</li>
+                <li class="flex items-start"><span class="text-[#0099CC] mr-2">•</span> No way to validate accuracy or bias</li>
+            </ul>
+            <div class="bg-[#F5F2EF] p-3 rounded-lg border-l-4 border-[#0099CC]">
+                <p class="text-xs text-[#2D3436] font-medium leading-relaxed">The result: tryout data becomes subjective, incomplete, and vulnerable to memory errors.</p>
+            </div>
+        </div>
+
+        <div class="relative pl-10">
+            <i data-lucide="users" class="absolute left-0 top-0.5 w-6 h-6 text-[#003366]"></i>
+            <h4 class="font-bold text-[#2D3436] text-base mb-2">3. Error-Prone Tracking</h4>
+            <p class="text-sm text-[#636E72] mb-3">Evaluators must constantly map: <strong>Player → Jersey number → Position → Drill → Performance notes</strong>.</p>
+            <div class="bg-[#F5F2EF] p-3 rounded-lg border-l-4 border-[#0099CC]">
+                <p class="text-xs text-[#2D3436] font-medium leading-relaxed">One misread jersey number or rushed scribble can misassign an entire evaluation. Multiply that across 40–100 players and the error rate skyrockets.</p>
+            </div>
+        </div>
+
+        <div class="relative pl-10">
+            <i data-lucide="puzzle" class="absolute left-0 top-0.5 w-6 h-6 text-[#003366]"></i>
+            <h4 class="font-bold text-[#2D3436] text-base mb-2">4. Roster Creation is Guesswork</h4>
+            <p class="text-sm text-[#636E72] mb-3">When it’s time to build a roster, evaluators must:</p>
+            <ul class="list-none space-y-2 mb-4 text-sm text-[#636E72]">
+                <li class="flex items-start"><span class="text-[#0099CC] mr-2">•</span> Remember which notes belong to which player</li>
+                <li class="flex items-start"><span class="text-[#0099CC] mr-2">•</span> Infer which players fit positional needs</li>
+                <li class="flex items-start"><span class="text-[#0099CC] mr-2">•</span> Reconcile multiple sheets of paper</li>
+                <li class="flex items-start"><span class="text-[#0099CC] mr-2">•</span> Rely on memory (“Oh yeah, I remember that kid…”)</li>
+            </ul>
+            <div class="bg-[#F5F2EF] p-3 rounded-lg border-l-4 border-[#0099CC]">
+                <p class="text-xs text-[#2D3436] font-medium leading-relaxed">This is where the system completely collapses. Coaches end up selecting players based on impressions rather than evidence.</p>
+            </div>
+        </div>
+
+        <div class="relative pl-10">
+            <i data-lucide="git-merge" class="absolute left-0 top-0.5 w-6 h-6 text-[#003366]"></i>
+            <h4 class="font-bold text-[#2D3436] text-base mb-2">5. Matching Needs vs. Talent</h4>
+            <p class="text-sm text-[#636E72] mb-3">A roster isn’t just “pick the best players.” It’s filling gaps, balancing strengths, building chemistry, and ensuring tactical coverage.</p>
+            <div class="bg-[#F5F2EF] p-3 rounded-lg border-l-4 border-[#0099CC]">
+                <p class="text-xs text-[#2D3436] font-medium leading-relaxed">Paper notes do not support structured decision-making. They do not map traits to positional requirements, and they do not help evaluators compare players objectively.</p>
+            </div>
+        </div>
+<div class="relative pl-10">
+            <i data-lucide="brain" class="absolute left-0 top-0.5 w-6 h-6 text-[#003366]"></i>
+            <h4 class="font-bold text-[#2D3436] text-base mb-2">6. Assumes Perfect Memory</h4>
+            <p class="text-sm text-[#636E72] mb-3">The entire workflow implicitly relies on the evaluator “remembering everything.” That’s unrealistic and unfair. This is why teams often end up with:</p>
+            <ul class="list-none space-y-2 mb-4 text-sm text-[#636E72]">
+                <li class="flex items-start"><span class="text-[#0099CC] mr-2">•</span> Misplaced players</li>
+                <li class="flex items-start"><span class="text-[#0099CC] mr-2">•</span> Overlooked talent</li>
+                <li class="flex items-start"><span class="text-[#0099CC] mr-2">•</span> Bias toward players who stood out visually</li>
+                <li class="flex items-start"><span class="text-[#0099CC] mr-2">•</span> Inconsistent evaluations across coaches</li>
+            </ul>
+            <div class="bg-[#F5F2EF] p-3 rounded-lg border-l-4 border-[#0099CC]">
+                <p class="text-xs text-[#2D3436] font-medium leading-relaxed">The system isn’t just outdated—it’s fundamentally incapable of producing reliable outcomes.</p>
+            </div>
+        </div>
+    </div>
+</section>
+            <section class="bg-white p-8 rounded-2xl border-t-8 border-[#6C5CE7] shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col h-[650px]">
+    
+    <div class="pb-4 mb-4 border-b border-[#E0DED7] shrink-0">
+        <h2 class="text-3xl font-extrabold mb-1 text-[#2D3436] tracking-tight flex items-center">
+            
+            <span class="text-[#003366]">Eval</span><span class="text-[#0099CC]">Bricks</span>
+        </h2>
+        <h3 class="text-sm font-semibold text-[#6C5CE7] uppercase tracking-wider leading-snug">
+            The AI-Assisted Player Evaluation & Team-Building Platform
+        </h3>
+    </div>
+
+    <div class="overflow-y-auto pr-2 space-y-4 flex-grow" style="scrollbar-width: thin; scrollbar-color: #6C5CE7 transparent;">
+        
+        <div class="group bg-[#F5F2EF] rounded-xl p-4 border border-transparent hover:border-[#6C5CE7] hover:bg-white hover:shadow-md transition-all duration-300">
+            <div class="flex items-center mb-2">
+                <div class="bg-[#6C5CE7] p-2 rounded-lg text-white mr-3 group-hover:scale-110 group-hover:bg-[#4834D4] transition-all duration-300">
+                    <i data-lucide="mic" class="w-5 h-5"></i>
+                </div>
+                <h4 class="font-bold text-[#2D3436] text-sm md:text-base">Voice-to-Text Player Recording</h4>
+            </div>
+            <p class="text-sm text-[#636E72] leading-relaxed pl-[3.25rem]">
+                Capture live observations without looking down at paper or missing the action.
+            </p>
+        </div>
+
+        <div class="group bg-[#F5F2EF] rounded-xl p-4 border border-transparent hover:border-[#6C5CE7] hover:bg-white hover:shadow-md transition-all duration-300">
+            <div class="flex items-center mb-2">
+                <div class="bg-[#6C5CE7] p-2 rounded-lg text-white mr-3 group-hover:scale-110 group-hover:bg-[#4834D4] transition-all duration-300">
+                    <i data-lucide="clipboard-list" class="w-5 h-5"></i>
+                </div>
+                <h4 class="font-bold text-[#2D3436] text-sm md:text-base">Position Blueprint Builder</h4>
+            </div>
+            <p class="text-sm text-[#636E72] leading-relaxed pl-[3.25rem]">
+                Store your ideal traits, characteristics, and skills for every position on your team.
+            </p>
+        </div>
+
+        <div class="group bg-[#F5F2EF] rounded-xl p-4 border border-transparent hover:border-[#6C5CE7] hover:bg-white hover:shadow-md transition-all duration-300">
+            <div class="flex items-center mb-2">
+                <div class="bg-[#6C5CE7] p-2 rounded-lg text-white mr-3 group-hover:scale-110 group-hover:bg-[#4834D4] transition-all duration-300">
+                    <i data-lucide="cpu" class="w-5 h-5"></i>
+                </div>
+                <h4 class="font-bold text-[#2D3436] text-sm md:text-base">AI-Powered Player Matching</h4>
+            </div>
+            <p class="text-sm text-[#636E72] leading-relaxed pl-[3.25rem]">
+                Automatically pair players with recommended positions based on your defined criteria and real tryout observations.
+            </p>
+        </div>
+
+        <div class="group bg-[#F5F2EF] rounded-xl p-4 border border-transparent hover:border-[#6C5CE7] hover:bg-white hover:shadow-md transition-all duration-300">
+            <div class="flex items-center mb-2">
+                <div class="bg-[#6C5CE7] p-2 rounded-lg text-white mr-3 group-hover:scale-110 group-hover:bg-[#4834D4] transition-all duration-300">
+                    <i data-lucide="users" class="w-5 h-5"></i>
+                </div>
+                <h4 class="font-bold text-[#2D3436] text-sm md:text-base">Smart Roster Construction</h4>
+            </div>
+            <p class="text-sm text-[#636E72] leading-relaxed pl-[3.25rem]">
+                Build a balanced, needs-based roster using structured data instead of memory or scattered notes.
+            </p>
+        </div>
+
+        <div class="group bg-[#F5F2EF] rounded-xl p-4 border border-transparent hover:border-[#6C5CE7] hover:bg-white hover:shadow-md transition-all duration-300">
+            <div class="flex items-center mb-2">
+                <div class="bg-[#6C5CE7] p-2 rounded-lg text-white mr-3 group-hover:scale-110 group-hover:bg-[#4834D4] transition-all duration-300">
+                    <i data-lucide="sparkles" class="w-5 h-5"></i>
+                </div>
+                <h4 class="font-bold text-[#2D3436] text-sm md:text-base">AI-Generated Trait Libraries</h4>
+            </div>
+            <p class="text-sm text-[#636E72] leading-relaxed pl-[3.25rem]">
+                Get starter lists of traits and skills for each position to help you define or refine your evaluation framework.
+            </p>
+        </div>
+
+    </div>
+</section>
+            <section class="bg-white p-4 md:p-6 rounded-2xl border-t-8 border-[#A29BFE] shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col relative overflow-hidden">
+    
+    <div class="pb-2 mb-2 border-b border-[#E0DED7] shrink-0">
+        <h2 class="text-xl md:text-2xl font-extrabold mb-0.5 text-[#2D3436] tracking-tight">Partners</h2>
+        <h3 class="text-xs font-semibold text-[#A29BFE] uppercase tracking-wider leading-snug">
+            Trusted by Top Clubs, Schools, and Coaches 
+        </h3>
+    </div>
+
+    <style>
+        @keyframes scroll-right {
+            /* Using translate3d forces the browser to use the GPU (Hardware Acceleration) */
+            0% { transform: translate3d(-50%, 0, 0); }
+            100% { transform: translate3d(0, 0, 0); }
+        }
+        .animate-marquee-right {
+            display: flex;
+            width: 200%;
+            animation: scroll-right 12s linear infinite;
+            will-change: transform; /* Tells the browser to prep memory for this animation */
+        }
+        .animate-marquee-right:hover {
+            animation-play-state: paused;
+        }
+    </style>
+
+    <div class="relative w-full py-4 md:py-6">
+        <div class="absolute inset-y-0 left-0 w-8 md:w-12 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
+        <div class="absolute inset-y-0 right-0 w-8 md:w-12 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
+
+        <div class="animate-marquee-right items-center">
+            
+            <div class="flex w-1/2 justify-around items-center px-2">
+                <img src="vipers.png" alt="Vipers" loading="eager" decoding="async" class="max-h-12 md:max-h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                <img src="hawks.jpeg" alt="Hawks" loading="eager" decoding="async" class="max-h-12 md:max-h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                <img src="avs.jpeg" alt="Avalanche" loading="eager" decoding="async" class="max-h-12 md:max-h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                <img src="crush.png" alt="Crush" loading="eager" decoding="async" class="max-h-12 md:max-h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300">
+            </div>
+            
+            <div class="flex w-1/2 justify-around items-center px-2">
+                <img src="vipers.png" alt="Vipers" loading="eager" decoding="async" class="max-h-12 md:max-h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                <img src="hawks.jpeg" alt="Hawks" loading="eager" decoding="async" class="max-h-12 md:max-h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                <img src="avs.jpeg" alt="Avalanche" loading="eager" decoding="async" class="max-h-12 md:max-h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                <img src="crush.png" alt="Crush" loading="eager" decoding="async" class="max-h-12 md:max-h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300">
+            </div>
+
+        </div>
+    </div>
+</section>
+        </div>
+
+        <div x-show="page !== 'home'" class="flex justify-center items-center h-full">
+            <h1 class="text-5xl font-extralight text-[#B2BEC3]">Info Coming Soon...</h1>
+        </div>
+    </main>
+
+    <footer class="bg-[#2D3436] text-white py-12 px-10 mt-auto">
+    <div class="max-w-5xl mx-auto flex flex-col items-center">
+        <h3 class="text-xl font-semibold mb-8 text-[#A29BFE]">Contact Us</h3>
+        <div class="flex space-x-10 text-sm">
+            
+            <a href="mailto:nathangwells@gmail.com" class="flex flex-col items-center hover:text-[#A29BFE] transition">
+                <i data-lucide="mail" class="mb-2"></i>
+                <span>Apple</span>
+            </a>
+            
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=nathangwells@gmail.com" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center hover:text-[#A29BFE] transition">
+                <i data-lucide="send" class="mb-2"></i>
+                <span>Gmail</span>
+            </a>
+            
+            <a href="https://compose.mail.yahoo.com/?to=nathangwells@gmail.com" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center hover:text-[#A29BFE] transition">
+                <i data-lucide="message-square" class="mb-2"></i>
+                <span>Yahoo</span>
+            </a>
+            
+            <a href="mailto:nathangwells@gmail.com" class="flex flex-col items-center hover:text-[#A29BFE] transition">
+                <i data-lucide="at-sign" class="mb-2"></i>
+                <span>Local</span>
+            </a>
+            
+        </div>
+    </div>
+</footer>
+
+    <script>
+      lucide.createIcons();
+    </script>
+</body>
+</html>
