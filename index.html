@@ -213,6 +213,49 @@
         </div>
 
     </div>
+                <div x-show="page === 'platform'" class="max-w-6xl mx-auto px-6 py-16 bg-white rounded-2xl shadow-md">
+            <div class="grid md:grid-cols-2 gap-12 items-center" x-data="{ activeFeature: 1 }">
+                
+                <div class="space-y-4">
+                    <h2 class="text-3xl font-bold text-[#2D3436] mb-8">Platform Highlights</h2>
+                    
+                    <div @click="activeFeature = 1" 
+                         :class="activeFeature === 1 ? 'border-[#4834D4] bg-white shadow-lg' : 'border-transparent bg-[#F5F2EF] hover:bg-white'"
+                         class="cursor-pointer p-6 rounded-2xl border-l-4 transition-all duration-300">
+                        <h3 class="font-bold text-lg">Voice-to-Text Recording</h3>
+                        <p class="text-sm text-[#636E72]">Capture live observations without missing any action.</p>
+                    </div>
+
+                    <div @click="activeFeature = 2" 
+                         :class="activeFeature === 2 ? 'border-[#4834D4] bg-white shadow-lg' : 'border-transparent bg-[#F5F2EF] hover:bg-white'"
+                         class="cursor-pointer p-6 rounded-2xl border-l-4 transition-all duration-300">
+                        <h3 class="font-bold text-lg">Position Blueprint Builder</h3>
+                        <p class="text-sm text-[#636E72]">Store ideal traits and skills for every position.</p>
+                    </div>
+
+                    <div @click="activeFeature = 3" 
+                         :class="activeFeature === 3 ? 'border-[#4834D4] bg-white shadow-lg' : 'border-transparent bg-[#F5F2EF] hover:bg-white'"
+                         class="cursor-pointer p-6 rounded-2xl border-l-4 transition-all duration-300">
+                        <h3 class="font-bold text-lg">AI-Powered Matching</h3>
+                        <p class="text-sm text-[#636E72]">Automatically pair players with recommended positions.</p>
+                    </div>
+
+                    <div @click="activeFeature = 4" 
+                         :class="activeFeature === 4 ? 'border-[#4834D4] bg-white shadow-lg' : 'border-transparent bg-[#F5F2EF] hover:bg-white'"
+                         class="cursor-pointer p-6 rounded-2xl border-l-4 transition-all duration-300">
+                        <h3 class="font-bold text-lg">Unified Analytics</h3>
+                        <p class="text-sm text-[#636E72]">Visualize comparative data for objective team-building.</p>
+                    </div>
+                </div>
+
+                <div class="h-[400px] w-full bg-[#E0DED7] rounded-3xl overflow-hidden shadow-inner flex items-center justify-center">
+                    <img src="placeholder1.jpg" x-show="activeFeature === 1" x-transition class="w-full h-full object-cover">
+                    <img src="placeholder2.jpg" x-show="activeFeature === 2" x-transition class="w-full h-full object-cover">
+                    <img src="placeholder3.jpg" x-show="activeFeature === 3" x-transition class="w-full h-full object-cover">
+                    <img src="placeholder4.jpg" x-show="activeFeature === 4" x-transition class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
 </section>
             <section class="bg-white p-4 md:p-6 rounded-2xl border-t-8 border-[#A29BFE] shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col relative overflow-hidden">
     
