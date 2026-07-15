@@ -278,37 +278,56 @@
                     <div @click="activeFeature = 1" 
                          :class="activeFeature === 1 ? 'border-[#4834D4] bg-white shadow-lg' : 'border-transparent bg-[#F5F2EF] hover:bg-white'"
                          class="cursor-pointer p-6 rounded-2xl border-l-4 transition-all duration-300">
-                        <h3 class="font-bold text-lg">Voice-to-Text Recording</h3>
-                        <p class="text-sm text-[#636E72]">Capture live observations without missing any action.</p>
+                        <h3 class="font-bold text-lg mb-2">Voice-to-Text Recording</h3>
+                        <ul class="text-sm text-[#636E72] list-disc pl-5 space-y-1">
+                            <li>Capture live observations without missing any action.</li>
+                            <li>Easily transcribe spoken notes into formatted text.</li>
+                            <li>Utilize local microphones or headphones</li>
+                            <li>Assistance from context-based AI models</li>
+                            <li>Multiple language handling</li>
+                            </ul>
                     </div>
 
                     <div @click="activeFeature = 2" 
                          :class="activeFeature === 2 ? 'border-[#4834D4] bg-white shadow-lg' : 'border-transparent bg-[#F5F2EF] hover:bg-white'"
                          class="cursor-pointer p-6 rounded-2xl border-l-4 transition-all duration-300">
                         <h3 class="font-bold text-lg">Position Blueprint Builder</h3>
-                        <p class="text-sm text-[#636E72]">Store ideal traits and skills for every position.</p>
+                        <ul class="text-sm text-[#636E72] list-disc pl-5 space-y-1">
+                            <li>Load and store ideal traits and skills for every position.</li>
+                            <li>Create custom positions and lineups to match your philosophy</li>
+                        </ul>
                     </div>
 
                     <div @click="activeFeature = 3" 
                          :class="activeFeature === 3 ? 'border-[#4834D4] bg-white shadow-lg' : 'border-transparent bg-[#F5F2EF] hover:bg-white'"
                          class="cursor-pointer p-6 rounded-2xl border-l-4 transition-all duration-300">
-                        <h3 class="font-bold text-lg">AI-Powered Matching</h3>
-                        <p class="text-sm text-[#636E72]">Automatically pair players with recommended positions.</p>
+                        <h3 class="font-bold text-lg">Player/Position Matching</h3>
+                        <ul class="text-sm text-[#636E72] list-disc pl-5 space-y-1">
+                            <li>Automatically pair players with recommended positions.</li>
+                            <li>Harness the power of AI to capture all similarities between desired skills and players.</li>
+                            <li>Secure and ethical prompts and algorithms for fail and unbiased assessment.  </li>
+                        </ul>
+                        
                     </div>
 
                     <div @click="activeFeature = 4" 
                          :class="activeFeature === 4 ? 'border-[#4834D4] bg-white shadow-lg' : 'border-transparent bg-[#F5F2EF] hover:bg-white'"
                          class="cursor-pointer p-6 rounded-2xl border-l-4 transition-all duration-300">
                         <h3 class="font-bold text-lg">Unified Analytics</h3>
-                        <p class="text-sm text-[#636E72]">Visualize comparative data for objective team-building.</p>
+                           <ul class="text-sm text-[#636E72] list-disc pl-5 space-y-1">
+                            <li>Visualize comparative data for objective team-building.</li>
+                            <li>Assist with identifying strengths and weaknesses throughout the roster.</li>
+                            
+                        </ul>
+                        
                     </div>
                 </div>
 
                 <div class="h-[400px] w-full bg-[#E0DED7] rounded-3xl overflow-hidden shadow-inner flex items-center justify-center">
-                    <img src="placeholder1.jpg" x-show="activeFeature === 1" x-transition class="w-full h-full object-cover">
-                    <img src="placeholder2.jpg" x-show="activeFeature === 2" x-transition class="w-full h-full object-cover">
-                    <img src="placeholder3.jpg" x-show="activeFeature === 3" x-transition class="w-full h-full object-cover">
-                    <img src="placeholder4.jpg" x-show="activeFeature === 4" x-transition class="w-full h-full object-cover">
+                    <img src="VLaction.jpg" x-show="activeFeature === 1" x-transition class="w-full h-full object-cover">
+                    <img src="DMaction.jpg" x-show="activeFeature === 2" x-transition class="w-full h-full object-cover">
+                    <img src="LBaction.jpg" x-show="activeFeature === 3" x-transition class="w-full h-full object-cover">
+                    <img src="AnalyticsAction1.jpg" x-show="activeFeature === 4" x-transition class="w-full h-full object-cover">
                 </div>
             </div>
         </div>
