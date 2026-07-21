@@ -14,22 +14,34 @@
 </head>
 <body class="bg-[#F5F2EF] text-[#2D3436] min-h-screen flex flex-col" x-data="{ page: 'home' }">
 
-    <nav class="flex justify-between items-center py-4 px-10 bg-white border-b border-[#E0DED7]">
-  <div class="flex items-center">
-    <a href="#">
-      <img src="EBlogo.jpeg" alt="EvalBricks Logo" class="h-32 w-auto object-contain">
-    </a>
-  </div>
-  
-  <div class="space-x-8 font-medium text-[#2D3436]">
-    <a href="#" @click.prevent="page = 'home'" class="hover:text-[#4834D4] transition-all duration-300">HOME</a>
-    <a href="#" @click.prevent="page = 'platform'" class="hover:text-[#4834D4] transition-all duration-300">Platform</a>
-    <a href="#" @click.prevent="page = 'about'" class="hover:text-[#4834D4] transition-all duration-300">About</a>
-    <a href="https://apps-soccergrade.onrender.com" class="px-4 py-2 bg-[#4834D4] text-white rounded-full hover:bg-[#6C5CE7] transition-all">Create/Login</a>
-    <a href="#" @click.prevent="page = 'pricing'" class="hover:text-[#4834D4] transition-all duration-300">Pricing</a>
-  </div>
+<nav class="flex flex-col md:flex-row justify-between items-center py-4 px-6 md:px-10 bg-white border-b border-[#E0DED7]" x-data="{ mobileMenuOpen: false }">
+    <!-- Top Row: Logo & Mobile Menu Toggle Button -->
+    <div class="flex justify-between items-center w-full md:w-auto">
+        <a href="#">
+            <img src="EBlogo.jpeg" alt="EvalBricks Logo" class="h-20 md:h-32 w-auto object-contain">
+        </a>
+        
+        <!-- Mobile Hamburger Button -->
+        <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden text-[#2D3436] focus:outline-none p-2">
+            <svg x-show="!mobileMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+            <svg x-show="mobileMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Navigation Links (Collapsible on Mobile, Inline on Desktop) -->
+    <div :class="mobileMenuOpen ? 'flex' : 'hidden md:flex'" class="flex-col md:flex-row items-center w-full md:w-auto space-y-4 md:space-y-0 md:space-x-8 font-medium text-[#2D3436] pt-4 md:pt-0 pb-2 md:pb-0 border-t md:border-0 border-[#E0DED7]">
+        <a href="#" @click.prevent="page = 'home'; mobileMenuOpen = false" class="hover:text-[#4834D4] transition-all duration-300">HOME</a>
+        <a href="#" @click.prevent="page = 'platform'; mobileMenuOpen = false" class="hover:text-[#4834D4] transition-all duration-300">Platform</a>
+        <a href="#" @click.prevent="page = 'about'; mobileMenuOpen = false" class="hover:text-[#4834D4] transition-all duration-300">About</a>
+        <a href="https://apps-soccergrade.onrender.com" class="px-4 py-2 bg-[#4834D4] text-white rounded-full hover:bg-[#6C5CE7] transition-all text-center">Create/Login</a>
+        <a href="#" @click.prevent="page = 'pricing'; mobileMenuOpen = false" class="hover:text-[#4834D4] transition-all duration-300">Pricing</a>
+    </div>
 </nav>
-</nav>
+
 
 <header class="relative w-full h-[50vh] overflow-hidden flex items-center justify-center">
     <div class="absolute inset-0">
